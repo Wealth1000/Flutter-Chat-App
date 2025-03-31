@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:learnflutter/providers/database_service.dart';
-import 'package:learnflutter/screens/places.dart';
 
 final colorScheme = ColorScheme.fromSeed(
   brightness: Brightness.dark,
@@ -24,9 +22,7 @@ final theme = ThemeData().copyWith(
   ),
 );
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await DatabaseService.instance.database; // Initialize database
+void main(){
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -38,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Great Places',
       theme: theme,
-      home: const PlacesScreen(),
+      home: const Placeholder(),
     );
   }
 }
